@@ -1,0 +1,18 @@
+body{
+    background-image: url(https://hdwallpaperim.com/wp-content/uploads/2017/08/25/124420-minimalism-simple_background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container h1{
+    color: white;
+    text-align: center;
+}
+.container .jumbotron{
+    height:60%;
+    width:60%;
+    margin-left: 20%;
+    margin-top: 5%;
+    background-color: aquamarine;
+    font-family: Javanese Text;
+}

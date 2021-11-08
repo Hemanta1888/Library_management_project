@@ -1,0 +1,26 @@
+{% extends 'app_template/common.html' %}
+
+{% block head %}
+<title>Student LogIn Page</title>
+{% endblock %}
+
+{% block body %}
+    <div class='container'>
+        <h1 class='text-center'><u><b>Student Login Form</b></u></h1><br><br>
+        <div class="well well-sm">Note:To log in, please enter your Username and Password.</div>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Username</label>
+                <input type="name" class="form-control" id="username" placeholder="Enter Username" name="name">
+              </div>
+            <div class="form-group">
+                <label for="pwd">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter password" name="pwd">
+            </div>
+            <input type= 'submit' class = 'btn btn-primary' value='Submit'>
+        </form>
+        <br>
+        <h5>New User?<b><a href="/studentregister">SignUp</a></b></h5>
+    </div>
+{% endblock %}

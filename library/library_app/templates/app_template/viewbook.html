@@ -1,0 +1,37 @@
+{% extends 'app_template/adminsite.html'%}
+    {% block head %}
+        <title>View Books</title>
+    {% endblock %}
+
+    {% block body %}
+        {% if book %}
+            <div class="container mt-4">
+                <h1 class="text-center">All Books List</h1>
+            </div>
+            <table class="table table-hover" id="example">
+                <tr>
+                    <th>Serial No.</th>
+                    <th>Book Name</th>
+                    <th>Author</th>
+                    <th>Available Status</th>
+                </tr>
+                {% for data in book %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{data.Book_name}}</td>
+                        <td>{{data.author}}</td>
+                        <td>{{data.available}}</td>
+                        <td><a href="/deletebook/{{data.name}}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this book?')">Delete</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <div class='container'>
+                <div class='jumbotron'>
+                        <h2>You have not added any book yet</h2>
+                        <h4>Please add the book to see the Books List</h4>
+                        <a href="{% url 'addbook'%}" class = "btn btn-primary">Add Book</a>
+                </div>
+            </div>
+        {% endif %}
+    {% endblock %}

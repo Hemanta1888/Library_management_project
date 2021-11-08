@@ -1,0 +1,41 @@
+{% extends 'app_template/adminsite.html'%}
+    {% block head %}
+        <title>Issue book</title>
+    {% endblock %}
+
+    {% block body %}
+        {% if submit %}
+            <div class='container'>
+                <h1>Book Issued Successfully.</h1>
+            </div>
+            <div class="container ">
+                <form method="POST"> 
+                    {% csrf_token %}
+                    {% for i in form %}
+                    <div class="form-group">
+                        <br>
+                      <h1><label>{{ i.label_tag }}</label></h1>
+                      <div class="form-control ">{{ i }}</div>
+                    </div>
+                    {% endfor %}
+                    <br>
+                <button type="submit" class="btn btn-primary ">Issue Book</button>
+            </div>
+            </form>
+        {% else %}
+        <div class="container ">
+            <form method="POST"> 
+                {% csrf_token %}
+                {% for i in form %}
+                <div class="form-group">
+                    <br>
+                  <h1><label>{{ i.label_tag }}</label></h1>
+                  <div class="form-control ">{{ i }}</div>
+                </div>
+                {% endfor %}
+                <br>
+            <button type="submit" class="btn btn-primary ">Issue Book</button>
+        </div>
+        </form>
+        {% endif %}
+    {% endblock %}

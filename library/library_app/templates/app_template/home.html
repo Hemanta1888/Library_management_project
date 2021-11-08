@@ -1,0 +1,20 @@
+{% extends 'app_template/common.html' %}
+{% load static %}
+
+{% block head %}
+    <title>
+        Homepage
+    </title>
+    <link href = "{% static 'CssFile/home.css' %}" rel = 'stylesheet'>
+{% endblock %}
+
+{% block body %}
+    <div class='container'>
+        <div class = 'jumbotron'>
+            <h2> Welcome to Hemanta's Library</h2>
+            <h4>Warning!</h4>
+            <p>You are about to enter a Library. <br>This is one of the most Dangerous places you will ever visit.</p>
+            <h5>Enjoy your visit</h5>
+        </div>
+    </div>
+{% endblock %}

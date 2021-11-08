@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang = 'en-US'>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" 
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        <link href = "{% static 'CssFile/adminpage.css' %}" rel = 'stylesheet'>
+        {% block head %}
+        {% endblock %}
+    </head>
+
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="http://127.0.0.1:8000/">Hemanta's Library</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'student_issuedbook'%}">View Issued Books</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                <li><a href="#">Welcome {{request.user}}</a></li>
+            </ul>
+            </div>
+        </nav>
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>

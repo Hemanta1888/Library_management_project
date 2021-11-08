@@ -1,0 +1,33 @@
+{% extends 'app_template/adminsite.html'%}
+
+{% block head %}
+    <title>Issued Book Page</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="text-center"><u>All Issued Books</u></h1>
+    <table class="table table-hover" id="example">
+        <tr class="text-center">
+            <td>Serial No.</td>
+            <td>Students </td>
+            <td>Email</td>
+            <td>Book Name</td>
+            <td>Author</td>
+            <td>Issue Date</td>
+            <td>Expiry Date</td>
+            <td>Fine</td>
+        </tr>
+            {% for data in IssueBook_details %}
+                <tr class="text-counter">
+                    <td>{{forloop.counter}}</td>
+                    <td>{{data.0}}</td>
+                    <td>{{data.1}}</td>
+                    <td>{{data.2}}</td>
+                    <td>{{data.3}}</td>
+                    <td>{{data.4}}</td>
+                    <td>{{data.5}}</td>
+                    <td>{{data.6}}</td>
+                </tr>
+            {% endfor %}
+{% endblock %}

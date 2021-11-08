@@ -1,0 +1,39 @@
+{% extends 'app_template/adminsite.html'%}
+    {% block head %}
+        <title>View all Students</title>
+    {% endblock %}
+
+    {% block body %}
+        {% if students %}
+            <div class="container mt-4">
+                <h1 class="text-center"><u>All Students List</u></h1><br><br><br>
+            </div>
+            <table class="table table-hover" id="example">
+                <tr>
+                    <th>Serial No.</th>
+                    <th>UserName</th>
+                    <th>Name</th>
+                    <th>Phone No.</th>
+                    <th>E-mail</th>
+                </tr>
+                {% for data in students %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{data.user}}</td>
+                        <td>{{data.student_name}}</td>
+                        <td>{{data.ph_number}}</td>
+                        <td>{{data.email}}</td>
+                        <td><a href="/deletestudent/{{data.name}}" class="btn btn-danger" onclick="return confirm('Are you want to delete this book?')">Delete</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <div class='container'>
+                <div class='jumbotron'>
+                        <h2>{{request.user}}, no students registered into your Library.</h2>
+                        <h4>When they registered you will saw their information</h4>
+                        <a href="{% url 'viewbook'%}" class = "btn btn-primary">View Book</a>
+                </div>
+            </div>
+        {% endif %}
+    {% endblock %}

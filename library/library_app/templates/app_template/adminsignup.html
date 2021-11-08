@@ -1,0 +1,27 @@
+{% extends 'app_template/common.html' %}
+
+{% block head %}
+<title>SignUp Page</title>
+{% endblock %}
+
+{% block body %}
+    <center>
+        <h2><u>Admin Signup Form</u></h2><br><br>
+    <form  method="post" class="form-horizontal">
+        {% csrf_token %}
+        {% for data in form %}
+            <div class="row mt-4">
+                <div class="form-group col-md-12">
+                    <label class="control-label">{{ data.label_tag }}</label>
+                    {{ data }}
+                </div>
+            </div>
+        {% endfor %}
+        <div class="row mt-4">
+            <button type="submit" class="btn btn-success">Sign Up</button>
+        </div>
+    </form>
+    <br>
+    <h5>Already have an account?<b><a href="/accounts/login/">Sign In</a></b></h5>
+    </center>
+{% endblock %}

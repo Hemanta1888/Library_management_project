@@ -1,0 +1,17 @@
+{% extends 'app_template/common.html' %}
+
+{% block head %}
+<title>Invalid Login</title>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class='jumbotron'>
+            <div class="alert alert-danger">
+                <strong>Invalid!</strong> Enter correct username and password
+              </div>
+              <a href="/studentlogin" class='btn btn-primary'>Sign In</a></h5>
+        </div>
+        <h5>New User?<b><a href="/studentregister">SignUp</a></b></h5>
+    </div>
+{% endblock %}

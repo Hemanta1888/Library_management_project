@@ -1,0 +1,18 @@
+{% extends 'app_template/studentsite.html'%}
+{% load static %}
+    {% block head %}
+        <title>Student Homepage</title>
+        <link href="{%static 'CssFile/studenthome.css' %}" rel = 'stylesheet'>
+    {% endblock %}
+
+    {% block body %}
+        <div class='container'>
+            <h1 abbr title="Welcome to Hemanta's Library" ><u>Welcome to Hemanta's Library</u></h1>
+            <div class='jumbotron'>
+                <h2 style="text-align: center;">Dear {{request.user}},</h2>
+                <h4 style="text-align: center;">Thank you for visiting our Library</h4>
+                <p style="text-align: center;">Use your details to acess your account</p>
+                <p></p>
+            </div>
+        </div>
+    {% endblock %}

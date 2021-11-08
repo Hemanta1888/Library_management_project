@@ -1,0 +1,15 @@
+{% extends 'app_template/common.html' %}
+
+{% block head %}
+<title>Incorrect Page</title>
+{% endblock %}
+
+{% block body %}
+    <div class='container'>
+        <div class='jumbotron'>
+            <p>127.0.0.1:8000 says:</p><br>
+            <h5>You have entered incorrect data<br><br>Please Enter the data again</h5>
+        </div>
+        <a href="/studentregister" class='btn btn-primary'>Signup</a>
+    </div>
+{% endblock %}

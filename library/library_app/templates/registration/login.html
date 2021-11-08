@@ -1,0 +1,17 @@
+{% extends 'app_template/common.html' %}
+
+{% block head %}
+<title>Login Page</title>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Only Admin is allow to login and maintain the library.</h1><br><br>
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}<br>
+            <button type = 'submit'>Login</button>
+            <!-- <a  href="/accounts/login" class = "btn btn-primary">Login</a> -->
+        </form>
+    </div>
+{% endblock %}

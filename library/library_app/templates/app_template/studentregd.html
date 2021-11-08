@@ -1,0 +1,72 @@
+{% extends 'app_template/common.html' %}
+
+{% block head %}
+<title>Student Registration Page</title>
+{% endblock %}
+
+{% block body %}
+    {% if submit %}
+        <div class="container">
+            <h1>You registered successfully</h1>
+            <h5>Already have an account?<b><a href="/studentlogin">Sign In</a></b></h5>
+        </div>
+    {% else %}
+        <div class="container">
+            <form method="POST"> 
+                {% csrf_token %}
+                <h1 class="text-center"><u>Student Registration Form</u></h1><br><br>
+                <div class="row mt-4"> 
+                    <div class="form-group col-md-6">
+                        <label>Username</label>
+                        <input type="text" class="form-control mt-2" name="username" placeholder="Enter Username" required>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="form-group col-md-6">
+                        <label>First Name</label>
+                        <input type="text" class="form-control mt-2" name="first_name" placeholder="Enter first Name" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control mt-2" name="last_name" placeholder="Enter last  Name" required>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="form-group col-md-6">
+                        <label>Nick name</label>
+                        <input type="text" class="form-control mt-2" name="name" placeholder="Enter nick name" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Mobile Number</label>
+                        <input type="number" class="form-control mt-2" name="phone" placeholder="Enter Mobile Number" required>
+                    </div>
+                </div>
+                <div class="row mt-4"> 
+                    <div class="form-group col-md-6">
+                        <label>Email</label>
+                        <input type="email" class="form-control mt-2" name="email" placeholder="Enter Email address" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Confirm Email</label>
+                        <input type="email" class="form-control mt-2" name="confirm_email" placeholder="Enter Confirm Email " required>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="form-group col-md-6">
+                        <label>Password</label>
+                        <input type="password" class="form-control mt-2" name="password" placeholder="Enter Password" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Confirm Password</label>
+                        <input type="password" class="form-control mt-2" name="confirmPassword" placeholder="Confirm Password" required>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary mt-4">Register</button><br>
+            </form>
+            <br>
+            <h5>Already have an account?<b><a href="/studentlogin">Sign In</a></b></h5>
+        </div>
+    {% endif %}
+{% endblock %}
