@@ -164,12 +164,12 @@ def student_homepage(request):
 
 
 def delete_book(request,bookname):
-    book = BookList.objects.filter(name=bookname )
+    book = BookList.objects.filter(Book_name=bookname )
     book.delete()
     return redirect("/viewbook")
 
 def delete_student(request,studentname):
-    student = Student.objects.filter(name = studentname)
+    student = Student.objects.filter(student_name = studentname)
     student.delete()
     return redirect("/viewstudent")
 
