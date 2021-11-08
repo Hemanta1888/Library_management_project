@@ -23,7 +23,7 @@
                         <td>{{data.student_name}}</td>
                         <td>{{data.ph_number}}</td>
                         <td>{{data.email}}</td>
-                        <td><a href="/deletestudent/{{data.name}}" class="btn btn-danger" onclick="return confirm('Are you want to delete this book?')">Delete</a></td>
+                        <td><a href="/deletestudent/{{data.student_name}}" class="btn btn-danger" onclick="return confirm('Are you want to delete this book?')">Delete</a></td>
                     </tr>
                 {% endfor %}
             </table>
