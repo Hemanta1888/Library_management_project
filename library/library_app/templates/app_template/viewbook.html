@@ -21,7 +21,7 @@
                         <td>{{data.Book_name}}</td>
                         <td>{{data.author}}</td>
                         <td>{{data.available}}</td>
-                        <td><a href="/deletebook/{{data.name}}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this book?')">Delete</a></td>
+                        <td><a href="/deletebook/{{data.Book_name}}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this book?')">Delete</a></td>
                     </tr>
                 {% endfor %}
             </table>
